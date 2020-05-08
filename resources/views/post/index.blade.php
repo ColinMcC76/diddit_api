@@ -9,7 +9,7 @@
             <div class='d-flex pt-3'>
                 <div class="col-md-4">
                     <a href="#">
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="{{$post->image}}" alt="">
                     </a>
                 </div>
                 <div class="col-md-7">
