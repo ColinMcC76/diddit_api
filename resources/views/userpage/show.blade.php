@@ -23,15 +23,15 @@
                     <div>
                         <ul class='d-flex justify-content-between list-unstyled flex-row'>
                             <li>
-                                <a class="h3" href="U/{{$post->user->id}}">U/{{$post->user->name}}</a>
+                                <a class="h3" href="/U/{{$post->user->id}}">U/{{$post->user->name}}</a>
                             </li>
                             <li>
-                                <a class="h3" href="D/{{$post->subdiddit->id}}">D/{{$post->subdiddit->name}}</a>
+                                <a class="h3" href="/D/{{$post->subdiddit->id}}">D/{{$post->subdiddit->name}}</a>
                             </li>
                         </ul>
                     
                     </div>
-                    <a class="h3" href="{{$post->id}}">{{$post->title}}</a>    
+                    <a class="h3" href="/{{$post->id}}">{{$post->title}}</a>    
                     <p class="pt-1">{{$post->body}}</p>
                 </div>
             </div>

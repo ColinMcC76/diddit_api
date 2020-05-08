@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Subdiddit;
+use App\Post;
 use App\User;
 
 use Illuminate\Http\Request;
@@ -18,6 +20,16 @@ class UserController extends Controller{
         //Should render a list of resources
         // dd($id);
         $user = User::find($id);
+        $posts= $user->posts;
+        foreach($posts as $post){
+            // $post['User'] = $user;
+            $subdiddit = Subdiddit::find($post['subdiddit_id']);
+            $post['Subdiddit'] = $subdiddit;
+        }
+        // $posts= User::find($post['user_id']);
+        // return json_encode($post);
+        return json_encode($user);
+
 
         return view('userpage.show', ['user'=> $user]);
     }

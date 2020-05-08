@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// use App\Http\Resources\User as UserResource;
+// use App\Http\Resources\GamesCollection;
+use App\Post;
+use App\User;
+use App\Subdiddit;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,3 +36,12 @@ Route::group([
         Route::get('user', 'AuthController@user');
     });
 });
+
+Route::get('/', 'PostController@index');
+
+Route::get('/{id}', 'PostController@show');
+
+Route::get('/U/{user_id}', 'UserController@show');
+
+Route::get('/D/{subdiddit_id}', 'SubdidditController@show');
+
