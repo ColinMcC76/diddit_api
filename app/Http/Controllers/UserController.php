@@ -22,9 +22,7 @@ class UserController extends Controller{
         $user = User::find($id);
         $posts= $user->posts;
         foreach($posts as $post){
-            // $post['User'] = $user;
-            $subdiddit = Subdiddit::find($post['subdiddit_id']);
-            $post['Subdiddit'] = $subdiddit;
+            $sub = $post->subdiddit;
         }
         // $posts= User::find($post['user_id']);
         // return json_encode($post);

@@ -15,7 +15,7 @@ class PostController extends Controller
         //Should render a list of resources
         // $subs = Subdiddit::latest()->get();
         $posts = Post::latest()->get();
-        // $users = User::all();
+        $users = User::all();
         foreach($posts as $post) {
             $user = User::find($post['user_id']);
             $post['User'] = $user;
@@ -24,7 +24,7 @@ class PostController extends Controller
 
         }
         // $x = [$subs,$posts,$users];
-        // return view('post.index', ['post'=> $post,'sub'=>$sub]);
+        // return view('post.index', ['post'=> $post]);
 
         return json_encode($posts);
     }

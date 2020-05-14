@@ -34,16 +34,3 @@
 </div>
 
 @endsection ('content')
-
-@section ('subnav')
-
-<ul class="navbar-nav mr-auto">
-    <select id="sub">
-    <option value="/">D/all</option>
-    @foreach ($sub as $sub)
-    <option value="/post/{{$sub->id}}">D/{{$sub->name}}</option>
-    @endforeach
-    </select>
-</ul>
-
-@endsection ('subnav')

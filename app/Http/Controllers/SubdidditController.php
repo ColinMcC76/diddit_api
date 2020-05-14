@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subdiddit;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -18,8 +19,21 @@ class SubdidditController extends Controller
         //Should render a list of resources
         // dd($id);
         $sub = Subdiddit::find($id);
+        $posts=$sub->posts;
+        foreach($posts as $post){
+            $user = User::find($post['user_id']);
+            $post['User'] = $user;
 
-        return view('subdiddit.show', ['subdiddit'=> $sub]);
+        }
+        // $posts=$sub->posts;
+        // foreach ($posts as $post){
+        //     $user = User::find($post['user_id']);
+        // }
+
+        return json_encode($sub);
+
+
+        // return view('subdiddit.show', ['subdiddit'=> $sub]);
     }
     // public function create() {
     //     //Shows a view to create a resource.
